@@ -23,9 +23,9 @@ we aim to determine peak over threshold flow events and what meterological condi
 
 ### Planned Methodology
 
-#### Expected Outcome
+### Expected Outcome
 
-#### Figures and Other Info
+### Figures and Other Info
 
-#### References
+### References
 
