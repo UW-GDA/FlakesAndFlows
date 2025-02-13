@@ -23,6 +23,7 @@ The goal of this project is to model and classify high flow events in Thunder Cr
 * [Metloom](https://github.com/M3Works/metloom)
 * [Data Retrieval](https://github.com/DOI-USGS/dataretrieval-python)
 * [HySwap](https://github.com/DOI-USGS/hyswap)
+* [Seaborn](https://seaborn.pydata.org/)
 
 ### Planned Methodology
 1. Identify a series of known Peak Over Threshold events on Thunder Creek (I.e. pulses that are above some typical flow value)
