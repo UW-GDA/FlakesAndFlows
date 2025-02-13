@@ -1,6 +1,6 @@
 # Flakes & Flows: Classifying High Flow Events in Snowpack Driven Watersheds
 
-### Members: Max Strecher, Hailey Sparks, Jesse Akes
+### Members: Max Stecher, Hailey Sparks, Jesse Akes
 
 ### Summary
 The goal of this project is to model and classify high flow events in Thunder Creek in Washington state. Using streamflow gauge data and nearby SNOTEL sites, we aim to determine peak over threshold flow events and what meterological conditions led to them. 
