@@ -16,6 +16,8 @@ The goal of this project is to model and classify high flow events in Thunder Cr
 * [USGS Stream Gauge Data (Thunder Creek)](https://waterdata.usgs.gov/monitoring-location/12175500/#dataTypeId=continuous-00060-0&period=P7D&showMedian=false)
 * [Snotel Sites](https://www.arcgis.com/apps/mapviewer/index.html?layers=719ef67bd41047bd952e497cbe6961d0)
 * [Thunder Basin SNOTEL](https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=817)
+* [Beaver Pass SNOTEL](https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=990)
+* [USGS Stream Gauge Data (Big beaver Creek)](https://waterdata.usgs.gov/monitoring-location/12172000/#dataTypeId=continuous-00065-0&period=P7D&showMedian=false)
 
 ### Tools/Packages
 * [Metloom](https://github.com/M3Works/metloom)
