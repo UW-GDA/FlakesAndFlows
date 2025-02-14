@@ -39,7 +39,6 @@ A way to a metrologically classify high flow events in snowpack driven water she
 ![Puse Compared to SWE and Temp](https://github.com/user-attachments/assets/975313d4-2340-4e98-b6b6-04e78b2936f8)
 ![Watershed and Snotel Site Location](https://github.com/user-attachments/assets/fb5304a3-1864-4fce-9a2d-9f736e7df56a)
 ![High Flow Events due to Atmospheric Rivers](https://github.com/user-attachments/assets/628b471f-1047-44ea-9f15-c0719335b86b)
-)
 
 
 ### References
