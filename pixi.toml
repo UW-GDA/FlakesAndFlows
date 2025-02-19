@@ -1,0 +1,25 @@
+[project]
+authors = ["Jesse Akes <jesseake@uw.edu>", "Hailey Sparks <haileys2@uw.edu>", "Max Stecher <mstech@uw.edu>"]
+channels = ["conda-forge"]
+description = "Flakes and Flows: High Flow Events on Thunder Creek"
+name = "FlakesAndFlows"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+ipykernel = ">=6.29.5,<7"
+pixi-kernel = ">=0.6.1,<0.7"
+pip = ">=25.0.1,<26"
+python = "3.12.1.*"
+pandas = ">=2.2.3,<3"
+numpy = ">=2.2.1,<3"
+scipy = ">=1.15.0,<2"
+xarray = ">=2025.1.0,<2026"
+matplotlib = ">=3.10.0,<4"
+zarr = ">=3.0.3,<4"
+pyproj = ">=3.7.1,<4"
+
+[pypi-dependencies]
+metloom = ">=0.6.1, <0.7"
