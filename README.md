@@ -42,5 +42,8 @@ A way to a metrologically classify high flow events in snowpack driven water she
 
 
 ### References
-[Max Temps at which snow forms by region](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018JD030140)
+* [Max Temps at which snow forms by region](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018JD030140)
+* [Snowpack Runoff](https://www.cell.com/iscience/fulltext/S2589-0042(22)00510-7)
+* [Mountain Rain vs. Snow](https://arc.lib.montana.edu/snow-science/objects/ISSW2024_P1.13.pdf)
+* [Rain on Snow Changes in 21st Century](https://link.springer.com/article/10.1007/s00382-024-07351-7)
 
