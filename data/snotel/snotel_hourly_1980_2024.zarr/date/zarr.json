@@ -1,6 +1,6 @@
 {
   "shape": [
-    218948
+    1134647
   ],
   "data_type": "int64",
   "chunk_grid": {
@@ -34,7 +34,7 @@
     }
   ],
   "attributes": {
-    "units": "hours since 1987-10-22 06:00:00",
+    "units": "minutes since 1987-10-22T06:00:00",
     "calendar": "proleptic_gregorian"
   },
   "dimension_names": [

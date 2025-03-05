@@ -1,6 +1,6 @@
 {
   "shape": [
-    13140,
+    16072,
     2
   ],
   "data_type": "float64",
@@ -38,6 +38,7 @@
   "attributes": {
     "units": "inches",
     "Description": "Snow Water Equivalent",
+    "coordinates": "elevation_ft lat lon site_name",
     "_FillValue": "AAAAAAAA+H8="
   },
   "dimension_names": [
