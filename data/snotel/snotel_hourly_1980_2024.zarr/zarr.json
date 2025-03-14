@@ -10,294 +10,9 @@
     "kind": "inline",
     "must_understand": false,
     "metadata": {
-      "elevation_ft": {
-        "shape": [
-          2
-        ],
-        "data_type": "float64",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              2
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": 0.0,
-        "codecs": [
-          {
-            "name": "bytes",
-            "configuration": {
-              "endian": "little"
-            }
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {
-          "_FillValue": "AAAAAAAA+H8="
-        },
-        "dimension_names": [
-          "site"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "site_name": {
-        "shape": [
-          2
-        ],
-        "data_type": "string",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              2
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": "",
-        "codecs": [
-          {
-            "name": "vlen-utf8",
-            "configuration": {}
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {},
-        "dimension_names": [
-          "site"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "SNOWDEPTH": {
-        "shape": [
-          1134647,
-          2
-        ],
-        "data_type": "float64",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              54737,
-              1
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": 0.0,
-        "codecs": [
-          {
-            "name": "bytes",
-            "configuration": {
-              "endian": "little"
-            }
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {
-          "units": "inches",
-          "Description": "Snow Depth",
-          "coordinates": "elevation_ft lat lon site_name",
-          "_FillValue": "AAAAAAAA+H8="
-        },
-        "dimension_names": [
-          "date",
-          "site"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "date": {
-        "shape": [
-          1134647
-        ],
-        "data_type": "int64",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              54737
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": 0,
-        "codecs": [
-          {
-            "name": "bytes",
-            "configuration": {
-              "endian": "little"
-            }
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {
-          "units": "minutes since 1987-10-22T06:00:00",
-          "calendar": "proleptic_gregorian"
-        },
-        "dimension_names": [
-          "date"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "AIR TEMP": {
-        "shape": [
-          1134647,
-          2
-        ],
-        "data_type": "float64",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              54737,
-              1
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": 0.0,
-        "codecs": [
-          {
-            "name": "bytes",
-            "configuration": {
-              "endian": "little"
-            }
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {
-          "units": "degF",
-          "Description": "Temperature",
-          "coordinates": "elevation_ft lat lon site_name",
-          "_FillValue": "AAAAAAAA+H8="
-        },
-        "dimension_names": [
-          "date",
-          "site"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "SWE": {
-        "shape": [
-          1134647,
-          2
-        ],
-        "data_type": "float64",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              54737,
-              1
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": 0.0,
-        "codecs": [
-          {
-            "name": "bytes",
-            "configuration": {
-              "endian": "little"
-            }
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {
-          "units": "inches",
-          "Description": "Snow Water Equivalent",
-          "coordinates": "elevation_ft lat lon site_name",
-          "_FillValue": "AAAAAAAA+H8="
-        },
-        "dimension_names": [
-          "date",
-          "site"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
       "ACCUMULATED PRECIPITATION": {
         "shape": [
-          1134647,
+          218948,
           2
         ],
         "data_type": "float64",
@@ -335,7 +50,6 @@
         "attributes": {
           "units": "inches",
           "Description": "Accumulated Precipitation",
-          "coordinates": "elevation_ft lat lon site_name",
           "_FillValue": "AAAAAAAA+H8="
         },
         "dimension_names": [
@@ -346,8 +60,9 @@
         "node_type": "array",
         "storage_transformers": []
       },
-      "lon": {
+      "SWE": {
         "shape": [
+          218948,
           2
         ],
         "data_type": "float64",
@@ -355,7 +70,8 @@
           "name": "regular",
           "configuration": {
             "chunk_shape": [
-              2
+              54737,
+              1
             ]
           }
         },
@@ -382,17 +98,67 @@
           }
         ],
         "attributes": {
+          "units": "inches",
+          "Description": "Snow Water Equivalent",
           "_FillValue": "AAAAAAAA+H8="
         },
         "dimension_names": [
+          "date",
           "site"
         ],
         "zarr_format": 3,
         "node_type": "array",
         "storage_transformers": []
       },
-      "lat": {
+      "date": {
         "shape": [
+          218948
+        ],
+        "data_type": "int64",
+        "chunk_grid": {
+          "name": "regular",
+          "configuration": {
+            "chunk_shape": [
+              54737
+            ]
+          }
+        },
+        "chunk_key_encoding": {
+          "name": "default",
+          "configuration": {
+            "separator": "/"
+          }
+        },
+        "fill_value": 0,
+        "codecs": [
+          {
+            "name": "bytes",
+            "configuration": {
+              "endian": "little"
+            }
+          },
+          {
+            "name": "zstd",
+            "configuration": {
+              "level": 0,
+              "checksum": false
+            }
+          }
+        ],
+        "attributes": {
+          "units": "hours since 1987-10-22 06:00:00",
+          "calendar": "proleptic_gregorian"
+        },
+        "dimension_names": [
+          "date"
+        ],
+        "zarr_format": 3,
+        "node_type": "array",
+        "storage_transformers": []
+      },
+      "AIR TEMP": {
+        "shape": [
+          218948,
           2
         ],
         "data_type": "float64",
@@ -400,7 +166,8 @@
           "name": "regular",
           "configuration": {
             "chunk_shape": [
-              2
+              54737,
+              1
             ]
           }
         },
@@ -427,9 +194,62 @@
           }
         ],
         "attributes": {
+          "units": "degF",
+          "Description": "Temperature",
           "_FillValue": "AAAAAAAA+H8="
         },
         "dimension_names": [
+          "date",
+          "site"
+        ],
+        "zarr_format": 3,
+        "node_type": "array",
+        "storage_transformers": []
+      },
+      "SNOWDEPTH": {
+        "shape": [
+          218948,
+          2
+        ],
+        "data_type": "float64",
+        "chunk_grid": {
+          "name": "regular",
+          "configuration": {
+            "chunk_shape": [
+              54737,
+              1
+            ]
+          }
+        },
+        "chunk_key_encoding": {
+          "name": "default",
+          "configuration": {
+            "separator": "/"
+          }
+        },
+        "fill_value": 0.0,
+        "codecs": [
+          {
+            "name": "bytes",
+            "configuration": {
+              "endian": "little"
+            }
+          },
+          {
+            "name": "zstd",
+            "configuration": {
+              "level": 0,
+              "checksum": false
+            }
+          }
+        ],
+        "attributes": {
+          "units": "inches",
+          "Description": "Snow Depth",
+          "_FillValue": "AAAAAAAA+H8="
+        },
+        "dimension_names": [
+          "date",
           "site"
         ],
         "zarr_format": 3,

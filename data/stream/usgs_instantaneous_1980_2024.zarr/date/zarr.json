@@ -1,13 +1,13 @@
 {
   "shape": [
-    16072
+    1134647
   ],
   "data_type": "int64",
   "chunk_grid": {
     "name": "regular",
     "configuration": {
       "chunk_shape": [
-        16072
+        70916
       ]
     }
   },
@@ -34,7 +34,7 @@
     }
   ],
   "attributes": {
-    "units": "days since 1980-01-01",
+    "units": "minutes since 1989-10-01 07:15:00",
     "calendar": "proleptic_gregorian"
   },
   "dimension_names": [

@@ -3,15 +3,16 @@
     "Description": "Streamflow Data",
     "Date Range": "1980-2024",
     "Sites": "Thunder Creek, Beaver Creek",
-    "Frequency": "Daily"
+    "Frequency": "15-Min"
   },
   "zarr_format": 3,
   "consolidated_metadata": {
     "kind": "inline",
     "must_understand": false,
     "metadata": {
-      "elevation_ft": {
+      "DISCHARGE": {
         "shape": [
+          1134647,
           2
         ],
         "data_type": "float64",
@@ -19,7 +20,8 @@
           "name": "regular",
           "configuration": {
             "chunk_shape": [
-              2
+              70916,
+              1
             ]
           }
         },
@@ -46,9 +48,12 @@
           }
         ],
         "attributes": {
+          "units": "ft^3/s",
+          "Description": "Discharge",
           "_FillValue": "AAAAAAAA+H8="
         },
         "dimension_names": [
+          "date",
           "site"
         ],
         "zarr_format": 3,
@@ -57,14 +62,14 @@
       },
       "date": {
         "shape": [
-          16072
+          1134647
         ],
         "data_type": "int64",
         "chunk_grid": {
           "name": "regular",
           "configuration": {
             "chunk_shape": [
-              16072
+              70916
             ]
           }
         },
@@ -91,56 +96,11 @@
           }
         ],
         "attributes": {
-          "units": "days since 1980-01-01",
+          "units": "minutes since 1989-10-01 07:15:00",
           "calendar": "proleptic_gregorian"
         },
         "dimension_names": [
           "date"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "lon": {
-        "shape": [
-          2
-        ],
-        "data_type": "float64",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              2
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": 0.0,
-        "codecs": [
-          {
-            "name": "bytes",
-            "configuration": {
-              "endian": "little"
-            }
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {
-          "_FillValue": "AAAAAAAA+H8="
-        },
-        "dimension_names": [
-          "site"
         ],
         "zarr_format": 3,
         "node_type": "array",
@@ -180,143 +140,6 @@
           }
         ],
         "attributes": {},
-        "dimension_names": [
-          "site"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "site_name": {
-        "shape": [
-          2
-        ],
-        "data_type": "string",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              2
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": "",
-        "codecs": [
-          {
-            "name": "vlen-utf8",
-            "configuration": {}
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {},
-        "dimension_names": [
-          "site"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "DISCHARGE": {
-        "shape": [
-          16072,
-          2
-        ],
-        "data_type": "float64",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              16072,
-              2
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": 0.0,
-        "codecs": [
-          {
-            "name": "bytes",
-            "configuration": {
-              "endian": "little"
-            }
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {
-          "units": "ft^3/s",
-          "Description": "Discharge",
-          "coordinates": "elevation_ft lat lon site_name",
-          "_FillValue": "AAAAAAAA+H8="
-        },
-        "dimension_names": [
-          "date",
-          "site"
-        ],
-        "zarr_format": 3,
-        "node_type": "array",
-        "storage_transformers": []
-      },
-      "lat": {
-        "shape": [
-          2
-        ],
-        "data_type": "float64",
-        "chunk_grid": {
-          "name": "regular",
-          "configuration": {
-            "chunk_shape": [
-              2
-            ]
-          }
-        },
-        "chunk_key_encoding": {
-          "name": "default",
-          "configuration": {
-            "separator": "/"
-          }
-        },
-        "fill_value": 0.0,
-        "codecs": [
-          {
-            "name": "bytes",
-            "configuration": {
-              "endian": "little"
-            }
-          },
-          {
-            "name": "zstd",
-            "configuration": {
-              "level": 0,
-              "checksum": false
-            }
-          }
-        ],
-        "attributes": {
-          "_FillValue": "AAAAAAAA+H8="
-        },
         "dimension_names": [
           "site"
         ],
