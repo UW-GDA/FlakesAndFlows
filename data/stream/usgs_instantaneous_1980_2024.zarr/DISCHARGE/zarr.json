@@ -1,6 +1,6 @@
 {
   "shape": [
-    16072,
+    1134647,
     2
   ],
   "data_type": "float64",
@@ -8,8 +8,8 @@
     "name": "regular",
     "configuration": {
       "chunk_shape": [
-        16072,
-        2
+        70916,
+        1
       ]
     }
   },
@@ -38,7 +38,6 @@
   "attributes": {
     "units": "ft^3/s",
     "Description": "Discharge",
-    "coordinates": "elevation_ft lat lon site_name",
     "_FillValue": "AAAAAAAA+H8="
   },
   "dimension_names": [
