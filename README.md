@@ -3,7 +3,7 @@
 ### Members: Max Stecher, Hailey Sparks, Jesse Akes
 
 ### Summary
-The goal of this project is to model and classify high flow events in Thunder Creek in Washington state. Using streamflow gauge data and nearby SNOTEL sites, we aim to determine peak over threshold flow events and what meterological conditions led to them. 
+The goal of this project is to model and classify high flow events in Thunder Creek in Washington state. Using streamflow gauge data and nearby SNOTEL sites, we aim to determine peak over threshold flow events and what meterological conditions led to them. Were they rain or snow? The frequency of these events is important to understand as climate change impacts the western united states threatening atypical flooding during winter seasons and diminishing water sotrage (as snow) for later parts of the water year. 
 
 ### Background
 
@@ -20,36 +20,53 @@ The goal of this project is to model and classify high flow events in Thunder Cr
 * [USGS Stream Gauge Data (Big beaver Creek)](https://waterdata.usgs.gov/monitoring-location/12172000/#dataTypeId=continuous-00065-0&period=P7D&showMedian=false)
 
 ### Tools/Packages
-* [Metloom](https://github.com/M3Works/metloom)
-* [Data Retrieval](https://github.com/DOI-USGS/dataretrieval-python)
-* [HySwap](https://github.com/DOI-USGS/hyswap)
-* [Seaborn](https://seaborn.pydata.org/)
-* [Scikit-Learn](https://scikit-learn.org/stable/)
-* [hvplot](https://github.com/holoviz/hvplot)
-* [matplotlib](https://matplotlib.org/)
-*[xarray](https://docs.xarray.dev/en/stable/)
+* [Metloom](https://github.com/M3Works/metloom) - Used to retrieve snotel and USGS data
+* [Seaborn](https://seaborn.pydata.org/) - Used for plotting confusion matrices
+* [Scikit-Learn](https://scikit-learn.org/stable/) - Used to build classifier
+* [hvplot](https://github.com/holoviz/hvplot) - Used to generate pretty plots
+* [matplotlib](https://matplotlib.org/)  - Used to generate pretty plots
+* [xarray](https://docs.xarray.dev/en/stable/) - Used to handle time series data for snotel sites and Streamguages
+
 ### Methodology
-1. **Data Processing**: Identify unimpounded watersheds that have a [SNOTEL site](https://www.nrcs.usda.gov/wps/portal/wcc/home/aboutUs/monitoringPrograms/automatedSnowMonitoring/) above a [USGS Streamgage], we used Beaver Creek SNOTEL paired with Beaver Creek streamgage and the neighboring Thrunder Basin SNOTEL paired with the Thunder Creek steamgage. **HAILEY AND JESSE ADD THINGS**
-2. **Spatial Analysis and Decision Tree Development**
-3. 
-1. Identify a series of known Peak Over Threshold events on Thunder Creek (I.e. pulses that are above some typical flow value)
-2. Analyze Snotel Data at Thunder Basin (above USGS Thunder Creek Gauge) and Beaver Creek (above USGS Beaver Creek) - we want to measure temperature and changes in snow water equivalent to understand what meterological conditions led to the pulse
-3. Classify the pulse event (Snow, Rain on Snow, or Rain) "Ground Truthed" with found rain on snow events
-4. Try to apply this to historical events and understand if we can classify these high flow events
+1. **Data Processing**: Identify unobstructed waterways that have a [SNOTEL site](https://www.nrcs.usda.gov/wps/portal/wcc/home/aboutUs/monitoringPrograms/automatedSnowMonitoring/) above a USGS Streamgauge - we used Beaver Pass SNOTEL paired with Beaver Creek Streamgauge and the neighboring Thunder Basin SNOTEL paired with the Thunder Creek steamgage. Once identified, we downloaded hourly SNOTEL SWE, AIR TEMP, ACCUMULATED PRECIPITATION, and SNOWDEPTH and 15-minute USGS discharge data from 1980-2024.
+2. Once downloaded, we realized that data was missing for several large chunks - and including pre-2019 for Thunder Basin. So, we excluded any missing data and algined/resampled the hourly snotel data down to a 15-minute frequency to feed to a decision tree classifier.
+4. **Decision Tree Development - Variables that went in and came out**
+5. After running the classifier, we predicted discharge and classified events, outputting a correlation matrix and a confusion matrix to validate/confirm the accuracy of our results.
+6. With our classified events we analyzed the entire time span 2011-2024, and looked at the frequency of these rain on snow events per year, and tried to understand any trends that surfaced. 
 
 ### Expected Outcome
 A way to a metrologically classify high flow events in snowpack driven water sheds
 
-### Figures and Other Info
+### Results
+#### Area of Study
+As noted above, we looked at Thunder Creek and Big Beaver Creek in the North Cascades of Washington
+![Sites with Elevation](data/images/MapWithLabels.png)
 
-![Puse Compared to SWE and Temp](https://github.com/user-attachments/assets/975313d4-2340-4e98-b6b6-04e78b2936f8)
-![Watershed and Snotel Site Location](https://github.com/user-attachments/assets/fb5304a3-1864-4fce-9a2d-9f736e7df56a)
-![High Flow Events due to Atmospheric Rivers](https://github.com/user-attachments/assets/628b471f-1047-44ea-9f15-c0719335b86b)
-### Figures
-## Map of Sites:
+#### Building the Decision Tree and Classifier
+**Hailey Enter Decision tree image here**
 
-### Findings
-Rain on snow events are notoriously difficult to model and predict, this is a first attempt at predicting rain on snow events
+After building the decision tree, we compared it against 'ground truth' events that were maunally identified and got the resulting confusion matrix:
+
+![Confusion Matrix](data/images/NormalizedConfusion.png)
+
+It indicates that our classifier is good at posotively identifiying snow only events, but often (36% of the time) miscatagorized purely snow events as rain on snow events. 
+
+#### Frequency of Events Analysis
+With our data classified, we tried to analyze trends in these events: were they happening more frequently? How were they distributed across nearby sites? 
+
+![Events by Site](data/images/ROSEventsCounts.png)
+
+With so little data, especially for Thunder Basin, it was hard to draw any conclusions. We see varied trends by year, but nothing worth noting. We applied a linear and quadratic regression across sites and actuallys saw a decrease, which may indiciatve of longer term aptterns of less precipitation in general, but it's hard to be conclusive. 
+![Thunder Events](data/images/RosEventsThunder.png)
+![Beaver Events](data/images/ROSEventsBeaver.png)
+
+#### Future Work
+As noted above, our ground truth classification was quite naive. We only considered events based on discharge in the winter, assuming that a spike was a rain on snow event. However, the spatial and elevation variation between our SNOTEL Site and Streamguage likely caused a lot of issues. Without even attempting to find the rain/snow partition (we assumed that rain or snow was happening at all points regardless of variation), we are likely being influenced by runoff/rain from lower elevations, but snow at higher elevations. It's important to understand that these patterns exist in a  gradient and are non-binary as we've defined. 
+
+We'd also want to find a better data source - the snotel sites in this region have limited data to run an analysis on (typicl climatalogical anlysis requires a minimum of a 30 year span) both in availability and in variety of parameters. 
+
+On the classifier side: **HAILEY ADD HERE**
+
 ### References
 *Brown, D. M., et al. "Max Temps at which Snow Forms by Region." Journal of Geophysical Research: Atmospheres, vol. 124, no. 17, 2019, pp. 9516-9533, https://doi.org/10.1029/2018JD030140.
 
