@@ -22,6 +22,8 @@ zarr = ">=3.0.3,<4"
 pyproj = ">=3.7.1,<4"
 contextily = ">=1.6.2,<2"
 pint-xarray = ">=0.4,<0.5"
+seaborn = ">=0.13.2,<0.14"
+scikit-learn = ">=1.6.1,<2"
 
 [pypi-dependencies]
 metloom = ">=0.6.1, <0.7"
