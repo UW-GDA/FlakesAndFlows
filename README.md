@@ -32,7 +32,7 @@ The goal of this project is to model and classify high flow events in Thunder Cr
 ### Methodology
 1. **Data Processing**: Identify unobstructed waterways that have a [SNOTEL site](https://www.nrcs.usda.gov/wps/portal/wcc/home/aboutUs/monitoringPrograms/automatedSnowMonitoring/) above a USGS Streamgauge - we used Beaver Pass SNOTEL paired with Beaver Creek Streamgauge and the neighboring Thunder Basin SNOTEL paired with the Thunder Creek steamgage. Once identified, we downloaded hourly SNOTEL SWE, AIR TEMP, ACCUMULATED PRECIPITATION, and SNOWDEPTH and 15-minute USGS discharge data from 1980-2024.
 2. Once downloaded, we realized that data was missing for several large chunks - and including pre-2019 for Thunder Basin. So, we excluded any missing data and algined/resampled the hourly snotel data down to a 15-minute frequency to feed to a decision tree classifier.
-4. **Decision Tree Development - Variables that went in and came out**
+4. The decision tree was built using sci-kit learn, and relied on SWE, Accumulated Precip, Discharge and Air Temp as inputs, and output the predicted dsicharge at a given time. We then compared against out input discharge to determine our accuracy. 
 5. After running the classifier, we predicted discharge and classified events, outputting a correlation matrix and a confusion matrix to validate/confirm the accuracy of our results.
 6. With our classified events we analyzed the entire time span 2011-2024, and looked at the frequency of these rain on snow events per year, and tried to understand any trends that surfaced. 
 
@@ -47,21 +47,23 @@ As noted above, we looked at Thunder Creek and Big Beaver Creek in the North Cas
 #### Building the Decision Tree and Classifier
 <img width="1216" alt="Classifier Decision Tree" src="https://github.com/user-attachments/assets/bae38a87-60e1-4ac9-b072-ac5e97e4ff60" />
 
-
 After building the decision tree, we compared it against 'ground truth' events that were maunally identified and got the resulting confusion matrix:
 
 ![Confusion Matrix](data/images/NormalizedConfusion.png)
 
-It indicates that our classifier is good at posotively identifiying snow only events, but often (36% of the time) miscatagorized purely snow events as rain on snow events. 
+It indicates that our classifier is good at positively identifiying snow only events, but often (36% of the time) miscatagorized purely snow events as rain on snow events. 
 
 #### Frequency of Events Analysis
 With our data classified, we tried to analyze trends in these events: were they happening more frequently? How were they distributed across nearby sites? 
 
-![Events by Site](data/images/ROSEventsCounts.png)
+![Events by Site](data/images/ROSEventCountGrid.png)
 
-With so little data, especially for Thunder Basin, it was hard to draw any conclusions. We see varied trends by year, but nothing worth noting. We applied a linear and quadratic regression across sites and actuallys saw a decrease, which may indiciatve of longer term aptterns of less precipitation in general, but it's hard to be conclusive. 
-![Thunder Events](data/images/RosEventsThunder.png)
-![Beaver Events](data/images/ROSEventsBeaver.png)
+![Overall Trends](data/images/CombinedTrend.png)
+
+With so little data, especially for Thunder Basin, it was hard to draw any conclusions. We see varied trends by year, but nothing worth noting. We applied a linear and quadratic regression across sites and actually saw an increase, which may indicatuve of longer term weather patterns of more precipitation in general and less of it following as snow, but it's hard to be conclusive. 
+
+![Thunder Events](data/images/PositiveTrend_thunder.png)
+![Beaver Events](data/images/PositiveTrend_beaver.png)
 
 #### Future Work
 As noted above, our ground truth classification was quite naive. We only considered events based on discharge in the winter, assuming that a spike was a rain on snow event. However, the spatial and elevation variation between our SNOTEL Site and Streamguage likely caused a lot of issues. Without even attempting to find the rain/snow partition (we assumed that rain or snow was happening at all points regardless of variation), we are likely being influenced by runoff/rain from lower elevations, but snow at higher elevations. It's important to understand that these patterns exist in a  gradient and are non-binary as we've defined. 
