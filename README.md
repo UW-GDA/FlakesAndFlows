@@ -45,7 +45,7 @@ As noted above, we looked at Thunder Creek and Big Beaver Creek in the North Cas
 ![Sites with Elevation](data/images/MapWithLabels.png)
 
 #### Building the Decision Tree and Classifier
-![ClassifierDecisionTree](https://github.com/user-attachments/assets/1eba68aa-f6da-4b32-963f-76ddd308a12d)
+<img width="1216" alt="Classifier Decision Tree" src="https://github.com/user-attachments/assets/bae38a87-60e1-4ac9-b072-ac5e97e4ff60" />
 
 
 After building the decision tree, we compared it against 'ground truth' events that were maunally identified and got the resulting confusion matrix:
