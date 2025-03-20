@@ -56,7 +56,7 @@ It indicates that our classifier is good at positively identifiying snow only ev
 #### Frequency of Events Analysis
 With our data classified, we tried to analyze trends in these events: were they happening more frequently? How were they distributed across nearby sites? 
 
-![Events by Site](data/images/ROSEventCountGrid.png)
+![Events by Site](data/images/ROSEventCountsGrid.png)
 
 ![Overall Trends](data/images/CombinedTrend.png)
 
