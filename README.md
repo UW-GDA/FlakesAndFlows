@@ -22,7 +22,7 @@ The goal of this project is to model and classify high flow events in Thunder Cr
 ### Tools/Packages
 * [Metloom](https://github.com/M3Works/metloom) - Used to retrieve snotel and USGS data
 * [Seaborn](https://seaborn.pydata.org/) - Used for plotting confusion matrices
-* [Scikit-Learn](https://scikit-learn.org/stable/) - Used to build classifier
+* [Scikit-Learn](https://scikit-learn.org/stable/) - Used for a variety of analyses, including Decision Tree regression and classification 
 * [hvplot](https://github.com/holoviz/hvplot) - Used to generate pretty plots
 * [matplotlib](https://matplotlib.org/)  - Used to generate pretty plots
 * [xarray](https://docs.xarray.dev/en/stable/) - Used to handle time series data for snotel sites and Streamguages
@@ -67,7 +67,7 @@ As noted above, our ground truth classification was quite naive. We only conside
 
 We'd also want to find a better data source - the snotel sites in this region have limited data to run an analysis on (typicl climatalogical anlysis requires a minimum of a 30 year span) both in availability and in variety of parameters. 
 
-On the classifier side: **HAILEY ADD HERE**
+On the classifier side: There are many updates that can be made to the classification algorithm. Firstly, we could consider a different baseline value that is used to distinguish betweem snow and rain on snow events. But more significantly, it would be better to explore multi-classification. In this work, we only explored binary classification (snow or rain on snow). But realistically, these events cannot be sorted into these black and white events. However, a final goal would to develop a more robust mathematical model to analyze rain and snow dynamics. 
 
 ### References
 *Brown, D. M., et al. "Max Temps at which Snow Forms by Region." Journal of Geophysical Research: Atmospheres, vol. 124, no. 17, 2019, pp. 9516-9533, https://doi.org/10.1029/2018JD030140.
