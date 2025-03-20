@@ -26,6 +26,8 @@ The goal of this project is to model and classify high flow events in Thunder Cr
 * [hvplot](https://github.com/holoviz/hvplot) - Used to generate pretty plots
 * [matplotlib](https://matplotlib.org/)  - Used to generate pretty plots
 * [xarray](https://docs.xarray.dev/en/stable/) - Used to handle time series data for snotel sites and Streamguages
+* [pint-xarray](https://pint-xarray.readthedocs.io/en/stable/) - Used as a convenience wrapper for using pint in xarray objects
+* [Numpy](https://numpy.org/) - Used to store data in matrix form for quantitative analysis and regression/classification
 
 ### Methodology
 1. **Data Processing**: Identify unobstructed waterways that have a [SNOTEL site](https://www.nrcs.usda.gov/wps/portal/wcc/home/aboutUs/monitoringPrograms/automatedSnowMonitoring/) above a USGS Streamgauge - we used Beaver Pass SNOTEL paired with Beaver Creek Streamgauge and the neighboring Thunder Basin SNOTEL paired with the Thunder Creek steamgage. Once identified, we downloaded hourly SNOTEL SWE, AIR TEMP, ACCUMULATED PRECIPITATION, and SNOWDEPTH and 15-minute USGS discharge data from 1980-2024.
